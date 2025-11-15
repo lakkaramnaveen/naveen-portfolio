@@ -1,7 +1,16 @@
 // src/components/layout/Navbar.tsx
 import React from "react";
 
-const links = [
+export interface NavLinkItem {
+  href: string;
+  label: string;
+}
+
+/**
+ * Single source of truth for navigation links.
+ * Exported for reuse (e.g., tests, future mobile menus, sitemap, etc.).
+ */
+export const NAV_LINKS: NavLinkItem[] = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
@@ -10,6 +19,41 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
+interface NavListProps {
+  links: NavLinkItem[];
+  itemClassName?: string;
+  linkClassName?: string;
+}
+
+/**
+ * Reusable navigation list to avoid duplicating link mapping
+ * between desktop and mobile navs.
+ */
+const NavList: React.FC<NavListProps> = ({
+  links,
+  itemClassName = "",
+  linkClassName = "",
+}) => {
+  return (
+    <ul className="flex items-center gap-3 text-xs">
+      {links.map((link) => (
+        <li key={link.href} className={itemClassName}>
+          <a href={link.href} className={linkClassName}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+/**
+ * Sticky top navigation bar.
+ *
+ * - Desktop and mobile navs share the same NAV_LINKS data.
+ * - Uses semantic header + nav landmarks.
+ * - Anchor links scroll to in-page sections (About, Experience, etc.).
+ */
 const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-30 backdrop-blur-xl bg-slate-950/90 border-b border-slate-800/60">
@@ -23,19 +67,13 @@ const Navbar: React.FC = () => {
           <span className="truncate">Naveen Kumar Lakkaram</span>
         </a>
 
+        {/* Desktop navigation */}
         <nav aria-label="Main navigation" className="hidden sm:block">
-          <ul className="flex items-center gap-3 text-xs">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="px-2.5 py-1 rounded-full text-slate-300 hover:text-slate-50 hover:bg-indigo-500/15 transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <NavList
+            links={NAV_LINKS}
+            itemClassName=""
+            linkClassName="px-2.5 py-1 rounded-full text-slate-300 hover:text-slate-50 hover:bg-indigo-500/15 transition-colors"
+          />
         </nav>
 
         {/* Mobile pill nav */}
@@ -43,18 +81,11 @@ const Navbar: React.FC = () => {
           aria-label="Main navigation mobile"
           className="sm:hidden flex-1 flex justify-end"
         >
-          <ul className="flex items-center gap-1 text-[11px] overflow-x-auto no-scrollbar">
-            {links.map((link) => (
-              <li key={link.href} className="flex-shrink-0">
-                <a
-                  href={link.href}
-                  className="px-2 py-0.5 rounded-full text-slate-300 hover:text-slate-50 hover:bg-indigo-500/15 transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <NavList
+            links={NAV_LINKS}
+            itemClassName="flex-shrink-0"
+            linkClassName="px-2 py-0.5 rounded-full text-slate-300 hover:text-slate-50 hover:bg-indigo-500/15 transition-colors"
+          />
         </nav>
       </div>
     </header>
