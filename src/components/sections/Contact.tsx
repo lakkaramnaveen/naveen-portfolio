@@ -20,7 +20,7 @@ const Contact: React.FC = () => (
         LinkedIn
       </a>
       <a
-        href="https://github.com/naveenkumarl1361-cpu"
+        href="https://github.com/lakkaramnaveen"
         target="_blank"
         rel="noreferrer noopener"
         className="btn btn--ghost"
