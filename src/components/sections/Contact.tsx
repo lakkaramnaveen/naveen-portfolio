@@ -9,7 +9,7 @@ const Contact: React.FC = () => (
     </p>
     <div className="contact__links">
       <a href="mailto:naveenkumarl1361@gmail.com" className="btn">
-        Email me
+        Email me at
       </a>
       <a
         href="https://www.linkedin.com/in/naveen-k-l/"
