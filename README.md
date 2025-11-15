@@ -1,74 +1,147 @@
-# React + TypeScript + Vite
+<p align="center" width="100%">
+  <!-- Replace with your own banner / screenshot -->
+  <img height="120" src="./public/profile-banner.png" alt="Naveen Portfolio Banner">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">Naveen – Developer Portfolio</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>A modern, responsive, 3D-enhanced portfolio for a Full Stack Java Developer</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=000" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=fff" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Vite-5+-646CFF?style=for-the-badge&logo=vite&logoColor=fff" alt="Vite">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=fff" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Three.js-react--three--fiber-000000?style=for-the-badge&logo=three.js&logoColor=fff" alt="Three.js">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License">
+</p>
 
-## React Compiler
+<p align="center">
+  <a href="#demo-movie_camera">Demo</a> •
+  <a href="#features-sparkles">Features</a> •
+  <a href="#sections-bookmark">Sections</a> •
+  <a href="#tech-stack-computer">Tech Stack</a> •
+  <a href="#getting-started-dart">Getting Started</a> •
+  <a href="#customization-art">Customization</a> •
+  <a href="#deployment-rocket">Deployment</a>
+</p>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This repository contains my personal developer portfolio, built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and a lightweight **Three.js** scene using `@react-three/fiber`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+It’s designed to be:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- clean and minimalist,
+- focused on **developer case-studies** rather than buzzwords,
+- responsive on everything from large monitors to small mobile screens,
+- and easy to maintain / extend as my experience grows.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+You can use it as inspiration or as a starting point for your own portfolio.
+
+---
+
+## Demo :movie_camera:
+
+<p align="center">
+  <!-- Replace with a real screenshot -->
+  <img src="./public/screenshot-home.png" alt="Portfolio Screenshot" width="100%">
+</p>
+
+<p align="center">
+  <!-- Replace with your actual GitHub Pages URL once deployed -->
+  <a href="https://YOUR_GITHUB_USERNAME.github.io/naveen-portfolio/" target="_blank">
+    <strong>🚀 View Live Demo</strong>
+  </a>
+</p>
+
+---
+
+## Features :sparkles:
+
+- ✅ **Modern UI** inspired by high-end product sites (Apple-style gradients & smooth cards)
+- ✅ **Fully Responsive** – looks great from ~320px mobile up to ultra-wide displays
+- ✅ **Developer-Focused Layout** – clear sections for experience, skills, projects & contact
+- ✅ **3D Experience** – a performant Three.js cube scene built with `@react-three/fiber`
+- ✅ **Tailwind-First Styling** – utility classes + a few custom tokens for consistent design
+- ✅ **TypeScript Everywhere** – typed React components and props
+- ✅ **No Backend Needed** – pure static site, perfect for GitHub Pages / Netlify / Vercel
+- ✅ **Easy to Customize** – edit a few React components to make it your own
+- ✅ **Fast Dev Experience** – Vite for super quick dev server and builds
+
+---
+
+## Sections :bookmark:
+
+The site is structured around clear, focused sections:
+
+| Section             | Description                                                                |
+| ------------------- | -------------------------------------------------------------------------- |
+| 🦸 **Hero**         | Intro, headline, CTAs and profile photo in a prominent hero layout         |
+| 👤 **About**        | Brief summary of who I am and what I like to work on                       |
+| 💼 **Experience**   | Timeline of roles (Walmart, Infosys, HCL, etc.) with impact-driven bullets |
+| 🛠️ **Skills**       | Tech stack grouped by Languages, Frontend, Backend, Databases, DevOps      |
+| 🚀 **Projects**     | Selected work with tags and short case-study style descriptions            |
+| 🎮 **3D Portfolio** | Minimal Three.js scene rendered via `@react-three/fiber`                   |
+| 📧 **Contact**      | Quick ways to reach me: email, LinkedIn, GitHub                            |
+| 📜 **Footer**       | Copyright + stack mention + hosting information                            |
+
+Each section lives in its own React component under `src/components/sections/` and is composed using a small set of shared building blocks (`Section`, `Tag`, `TimelineItem`).
+
+---
+
+## Tech Stack :computer:
+
+| Technology             | Purpose                                      |
+| ---------------------- | -------------------------------------------- |
+| **React**              | Component-based UI                           |
+| **TypeScript**         | Static typing for safer, clearer code        |
+| **Vite**               | Dev server & bundler                         |
+| **Tailwind CSS**       | Utility-first styling + custom design tokens |
+| **@tailwindcss/vite**  | Native Tailwind 3/4 integration with Vite    |
+| **Three.js**           | 3D rendering (via react-three-fiber)         |
+| **@react-three/fiber** | React renderer for Three.js                  |
+| **@react-three/drei**  | Useful helpers (OrbitControls, etc.)         |
+
+---
+
+## Project Structure :file_folder:
+
+```text
+naveen-portfolio/
+├─ public/
+│  ├─ profile.png
+│  ├─ screenshot-home.png
+│  └─ favicon.svg
+├─ src/
+│  ├─ components/
+│  │  ├─ common/
+│  │  │  ├─ Section.tsx
+│  │  │  ├─ Tag.tsx
+│  │  │  └─ TimelineItem.tsx
+│  │  ├─ layout/
+│  │  │  ├─ Navbar.tsx
+│  │  │  └─ Footer.tsx
+│  │  └─ sections/
+│  │     ├─ Hero.tsx
+│  │     ├─ About.tsx
+│  │     ├─ Experience.tsx
+│  │     ├─ Skills.tsx
+│  │     ├─ Projects.tsx
+│  │     ├─ Contact.tsx
+│  │     └─ ThreeD.tsx (PortfolioScene)
+│  ├─ three/
+│  │  └─ PortfolioScene.tsx
+│  ├─ App.tsx
+│  ├─ main.tsx
+│  └─ index.css
+├─ tailwind.config.js
+├─ postcss.config.js
+├─ vite.config.ts
+├─ tsconfig.json
+└─ package.json
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# naveen-portfolio
