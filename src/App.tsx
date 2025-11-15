@@ -20,14 +20,20 @@ const App: React.FC = () => {
         <Experience />
         <Skills />
         <Projects />
-        <section id="three">
-          <Suspense
-            fallback={
-              <div className="three-loading">Loading 3D experience…</div>
-            }
-          >
-            <PortfolioScene />
-          </Suspense>
+        <section id="three" className="py-12 sm:py-16 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="rounded-3xl bg-slate-900/70 border border-slate-700/70 shadow-soft-lg overflow-hidden h-64 sm:h-80 md:h-96 flex items-center justify-center">
+              <Suspense
+                fallback={
+                  <div className="w-full h-full flex items-center justify-center text-sm text-slate-400">
+                    Loading 3D experience…
+                  </div>
+                }
+              >
+                <PortfolioScene />
+              </Suspense>
+            </div>
+          </div>
         </section>
         <Contact />
       </main>

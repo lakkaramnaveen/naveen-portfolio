@@ -1,3 +1,4 @@
+// src/components/sections/Skills.tsx
 import React from "react";
 import Section from "../common/Section";
 import Tag from "../common/Tag";
@@ -39,11 +40,16 @@ const skillGroups = [
 
 const Skills: React.FC = () => (
   <Section id="skills" title="Skills" kicker="What I work with">
-    <div className="skills-grid">
+    <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {skillGroups.map((group) => (
-        <div key={group.title} className="skills-group">
-          <h3>{group.title}</h3>
-          <div className="skills-group__tags">
+        <div
+          key={group.title}
+          className="rounded-3xl bg-slate-900/70 border border-slate-700/70 hover:border-indigo-500/60 p-5 transition-colors"
+        >
+          <h3 className="text-sm font-semibold text-slate-50 mb-3">
+            {group.title}
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
             {group.skills.map((skill) => (
               <Tag key={skill} label={skill} />
             ))}

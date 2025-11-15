@@ -6,10 +6,9 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import type { Mesh } from "three";
 
 const SpinningCube: React.FC = () => {
-  const meshRef = useRef<Mesh | null>(null);
+  const meshRef = useRef<THREE.Mesh>(null!);
 
   useFrame((_state, delta) => {
     if (!meshRef.current) return;
@@ -20,14 +19,14 @@ const SpinningCube: React.FC = () => {
   return (
     <mesh ref={meshRef} castShadow receiveShadow>
       <boxGeometry args={[1.2, 1.2, 1.2]} />
-      <meshStandardMaterial />
+      <meshStandardMaterial color="#4f46e5" />
     </mesh>
   );
 };
 
 const PortfolioScene: React.FC = () => {
   return (
-    <div className="three-wrapper" aria-label="3D portfolio visual">
+    <div className="w-full rounded-2xl border border-slate-700/70 bg-slate-950/90 overflow-hidden h-64 sm:h-80">
       <Canvas camera={{ position: [3, 3, 3], fov: 50 }} shadows dpr={[1, 2]}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[4, 6, 4]} intensity={1} castShadow />

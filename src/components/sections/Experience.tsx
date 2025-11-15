@@ -1,3 +1,4 @@
+// src/components/sections/Experience.tsx
 import React from "react";
 import Section from "../common/Section";
 import TimelineItem from "../common/TimelineItem";
@@ -5,7 +6,7 @@ import TimelineItem from "../common/TimelineItem";
 const Experience: React.FC = () => {
   return (
     <Section id="experience" title="Experience" kicker="Where I’ve been">
-      <div className="timeline">
+      <div className="space-y-5">
         <TimelineItem
           title="Software Engineer 3"
           company="Walmart · AdTech"

@@ -1,3 +1,4 @@
+// src/components/sections/Projects.tsx
 import React from "react";
 import Section from "../common/Section";
 import Tag from "../common/Tag";
@@ -39,21 +40,31 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => (
   <Section id="projects" title="Selected work" kicker="What I’ve built">
-    <div className="projects-grid">
+    <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
       {projects.map((project) => (
-        <article key={project.title} className="project-card">
-          <header>
-            <h3>{project.title}</h3>
-          </header>
-          <p>{project.description}</p>
-          <div className="project-card__tags">
-            {project.tags.map((tag) => (
-              <Tag key={tag} label={tag} />
-            ))}
+        <article
+          key={project.title}
+          className="rounded-3xl bg-slate-900/70 border border-slate-700/70 hover:border-indigo-500/60 p-5 flex flex-col justify-between transition-colors"
+        >
+          <div>
+            <h3 className="text-sm sm:text-base font-semibold text-slate-50 mb-2">
+              {project.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 mb-3">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-2">
+              {project.tags.map((tag) => (
+                <Tag key={tag} label={tag} />
+              ))}
+            </div>
           </div>
           {project.link && (
-            <a href={project.link} className="project-card__link">
-              View details
+            <a
+              href={project.link}
+              className="text-xs text-indigo-300 hover:text-indigo-200 inline-flex items-center gap-1 mt-1"
+            >
+              View details <span aria-hidden="true">↗</span>
             </a>
           )}
         </article>
