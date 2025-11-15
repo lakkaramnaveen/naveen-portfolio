@@ -54,7 +54,7 @@ You can use it as inspiration or as a starting point for your own portfolio.
 
 <p align="center">
   <!-- Replace with your actual GitHub Pages URL once deployed -->
-  <a href="https://YOUR_GITHUB_USERNAME.github.io/naveen-portfolio/" target="_blank">
+  <a href="https://lakkaramnaveen.github.io/naveen-portfolio/" target="_blank">
     <strong>🚀 View Live Demo</strong>
   </a>
 </p>
